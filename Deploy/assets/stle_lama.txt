@@ -1,0 +1,999 @@
+/* ============================================================
+   assets/style.css — NutriScan Design System
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 14px;
+    border-radius: 10px;
+    color: rgba(251,245,221,0.75);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0 10px 2px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.nav-item:hover {
+    background-color: rgba(48,109,41,0.55);
+    color: #FBF5DD;
+}
+.nav-active {
+    background-color: #306D29 !important;
+    color: #FBF5DD !important;
+    font-weight: 600 !important;
+}
+
+/* ── Reset & Base ─────────────────────────────────────────── */
+html, body, [class*="css"],
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"], .main {
+    font-family: 'Poppins', sans-serif !important;
+    background-color: #F5F0DC !important;
+    color: #0D530E !important;
+}
+
+[data-testid="stHeader"]     { display: none !important; }
+[data-testid="stDecoration"] { display: none !important; }
+[data-testid="stToolbar"]    { display: none !important; }
+#MainMenu                    { visibility: hidden !important; }
+footer                       { visibility: hidden !important; }
+
+/* ── Sidebar ──────────────────────────────────────────────── */
+[data-testid="stSidebar"] {
+    background-color: #0D530E !important;
+    border-right: none !important;
+    padding-top: 0 !important;
+    min-width: 240px !important;
+    max-width: 240px !important;
+}
+[data-testid="stSidebar"] > div:first-child {
+    padding-top: 0 !important;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+[data-testid="stSidebar"] * {
+    color: #FBF5DD !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 20px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 12px;
+}
+.sidebar-logo-wrap {
+    background-color: #306D29;
+    border-radius: 10px;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.sidebar-app-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #FBF5DD;
+    line-height: 1.2;
+}
+.sidebar-app-sub {
+    font-size: 11px;
+    color: rgba(251,245,221,0.6);
+    line-height: 1.2;
+}
+.sidebar-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    margin: 4px 16px 8px;
+}
+.sidebar-footer {
+    font-size: 11px;
+    color: rgba(251,245,221,0.45);
+    text-align: center;
+    padding: 16px;
+    margin-top: auto;
+}
+
+/* Sidebar page_link nav */
+[data-testid="stSidebar"] [data-testid="stPageLink"] {
+    padding: 0 10px 2px !important;
+}
+[data-testid="stSidebar"] [data-testid="stPageLink"] a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 11px 14px !important;
+    border-radius: 10px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    color: rgba(251,245,221,0.7) !important;
+    text-decoration: none !important;
+    transition: background 0.2s, color 0.2s !important;
+}
+[data-testid="stSidebar"] [data-testid="stPageLink"] a:hover {
+    background-color: rgba(48,109,41,0.55) !important;
+    color: #FBF5DD !important;
+}
+[data-testid="stSidebar"] [data-testid="stPageLink"] a[aria-current="page"] {
+    background-color: #306D29 !important;
+    color: #FBF5DD !important;
+    font-weight: 600 !important;
+}
+
+/* ── Main content padding ─────────────────────────────────── */
+[data-testid="stMain"] > div {
+    padding-top: 2rem !important;
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+}
+
+/* ── Page Header ──────────────────────────────────────────── */
+.page-header {
+    margin-bottom: 24px;
+}
+.page-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #0D530E;
+    margin: 0 0 6px;
+    line-height: 1.2;
+}
+.page-subtitle {
+    font-size: 14px;
+    color: #4a7c59;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ── Stat Cards ───────────────────────────────────────────── */
+.stat-card {
+    background-color: #E8E4C4;
+    border-radius: 16px;
+    padding: 22px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 130px;
+}
+.stat-icon-wrap {
+    background-color: #306D29;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.stat-value {
+    font-size: 30px;
+    font-weight: 700;
+    color: #0D530E;
+    line-height: 1.1;
+}
+.stat-label {
+    font-size: 13px;
+    color: #5a7a5a;
+    font-weight: 400;
+}
+
+/* ── Feature Banner ───────────────────────────────────────── */
+.feature-banner {
+    background-color: #E8E4C4;
+    border-radius: 16px;
+    padding: 26px 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+}
+.feature-banner-icon {
+    background-color: #306D29;
+    border-radius: 14px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.feature-banner-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0D530E;
+    margin-bottom: 8px;
+}
+.feature-banner-desc {
+    font-size: 13px;
+    color: #4a6a4a;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+.feature-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.feature-chip {
+    background-color: rgba(48,109,41,0.12);
+    color: #0D530E;
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ── Section Title ────────────────────────────────────────── */
+.section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0D530E;
+    margin-bottom: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ── Riwayat ──────────────────────────────────────────────── */
+.riwayat-wrap {
+    background-color: #E8E4C4;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 8px;
+}
+.riwayat-item {
+    background-color: #FBF5DD;
+    border-radius: 12px;
+    padding: 13px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 8px;
+}
+.riwayat-item:last-child { margin-bottom: 0; }
+.riwayat-icon {
+    background-color: #306D29;
+    border-radius: 10px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.riwayat-nama {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0D530E;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.riwayat-waktu {
+    font-size: 12px;
+    color: #6a8a6a;
+    margin-top: 2px;
+}
+.riwayat-body { flex: 1; min-width: 0; }
+.riwayat-badge {
+    background-color: #E8E4C4;
+    color: #0D530E;
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ── Empty state ──────────────────────────────────────────── */
+.empty-state {
+    background-color: #E8E4C4;
+    border-radius: 16px;
+    padding: 40px 24px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+/* ── CTA Button ───────────────────────────────────────────── */
+.cta-button .stButton > button {
+    background-color: #1a5c1a !important;
+    color: #FBF5DD !important;
+    border: none !important;
+    border-radius: 14px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    padding: 18px 24px !important;
+    letter-spacing: 0.3px !important;
+    transition: background 0.2s !important;
+}
+.cta-button .stButton > button:hover {
+    background-color: #306D29 !important;
+}
+
+/* ── Tombol Utama (default) ───────────────────────────────── */
+.stButton > button {
+    background-color: #306D29 !important;
+    color: #FBF5DD !important;
+    border: none !important;
+    border-radius: 12px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.92rem !important;
+    padding: 10px 20px !important;
+    transition: background 0.2s, transform 0.1s !important;
+    cursor: pointer !important;
+}
+.stButton > button:hover {
+    background-color: #0D530E !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Tombol outlined */
+.btn-outline .stButton > button {
+    background-color: transparent !important;
+    color: #306D29 !important;
+    border: 2px solid #306D29 !important;
+}
+.btn-outline .stButton > button:hover {
+    background-color: #306D29 !important;
+    color: #FBF5DD !important;
+}
+
+/* Tombol scan langsung (filled) */
+.btn-scan-filled .stButton > button {
+    background-color: #1a5c1a !important;
+    color: #FBF5DD !important;
+    border-radius: 10px !important;
+    font-size: 0.9rem !important;
+    padding: 10px 20px !important;
+}
+
+/* Tombol ghost */
+.btn-ghost .stButton > button {
+    background-color: #E8E4C4 !important;
+    color: #0D530E !important;
+    border: none !important;
+    font-size: 0.8rem !important;
+    padding: 7px 14px !important;
+}
+.btn-ghost .stButton > button:hover {
+    background-color: #d4ce9e !important;
+}
+
+/* Sidebar buttons */
+[data-testid="stSidebar"] .stButton > button {
+    background-color: transparent !important;
+    color: rgba(251,245,221,0.75) !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    text-align: left !important;
+    padding: 10px 14px !important;
+    margin-bottom: 2px !important;
+}
+[data-testid="stSidebar"] .stButton > button:hover {
+    background-color: rgba(48,109,41,0.55) !important;
+    color: #FBF5DD !important;
+    transform: none !important;
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.card {
+    background-color: #E8E4C4;
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+}
+.card-white {
+    background-color: #ffffff;
+    border: 1px solid #ddd8b8;
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+}
+
+/* ── Tabel Kalori (grid-based, bukan <table>) ─────────────── */
+.tabel-wrap {
+    background-color: #E8E4C4;
+    border-radius: 16px;
+    padding: 20px 20px 16px;
+    margin-bottom: 16px;
+}
+.tabel-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0D530E;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.tabel-header {
+    display: grid;
+    grid-template-columns: 1fr 150px 150px;
+    padding: 8px 14px 12px;
+    border-bottom: 1px solid rgba(48,109,41,0.2);
+    margin-bottom: 0;
+}
+.tabel-header span {
+    font-size: 11px;
+    font-weight: 600;
+    color: #4a6a4a;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+.tabel-header .th-right { text-align: center; }
+.tabel-row {
+    display: grid;
+    grid-template-columns: 1fr 150px 150px;
+    padding: 14px 14px;
+    background-color: transparent;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(48,109,41,0.1);
+    margin-bottom: 0;
+    align-items: center;
+}
+.tabel-nama {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0D530E;
+}
+.tabel-berat {
+    font-size: 14px;
+    color: #4a6a4a;
+    text-align: center;
+}
+.tabel-kalori {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0D530E;
+    text-align: right;
+}
+.tabel-total-row {
+    display: grid;
+    grid-template-columns: 1fr 150px 150px;
+    padding: 14px 14px;
+    background-color: transparent;
+    border-radius: 0;
+    margin-top: 0;
+    align-items: center;
+    border: none;
+    border-top: 2px solid rgba(48,109,41,0.2);
+}
+.tabel-total-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0D530E;
+}
+.tabel-total-berat {
+    font-size: 14px;
+    font-weight: 400;
+    color: #4a6a4a;
+    text-align: center;
+}
+.tabel-total-kalori {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0D530E;
+    text-align: right;
+}
+
+/* ── Progress bar kalori ──────────────────────────────────── */
+.kalori-progress-wrap {
+    margin: 12px 0 4px;
+}
+.kalori-progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #4a6a4a;
+    margin-bottom: 6px;
+}
+.kalori-progress-bg {
+    background-color: rgba(48,109,41,0.15);
+    border-radius: 99px;
+    height: 8px;
+    width: 100%;
+}
+.kalori-progress-fill {
+    height: 8px;
+    background-color: #306D29;
+    border-radius: 99px;
+}
+
+/* ── Nutrisi Card (horizontal) ────────────────────────────── */
+.nutrisi-wrap {
+    background-color: #E8E4C4;
+    border-radius: 16px;
+    padding: 20px 20px 16px;
+    margin-bottom: 16px;
+}
+.nutrisi-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0D530E;
+    margin-bottom: 14px;
+}
+.nutrisi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.nutrisi-item {
+    background-color: #FBF5DD;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.nutrisi-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nutrisi-item-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nutrisi-icon {
+    background-color: #306D29;
+    border-radius: 8px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+.nutrisi-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #0D530E;
+}
+.nutrisi-value {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0D530E;
+    white-space: nowrap;
+}
+.nutrisi-value span {
+    font-size: 12px;
+    font-weight: 400;
+    color: #6a8a6a;
+}
+.nutrisi-bar-bg {
+    height: 4px;
+    background-color: #E8E4C4;
+    border-radius: 99px;
+}
+.nutrisi-bar-fill {
+    height: 4px;
+    background-color: #306D29;
+    border-radius: 99px;
+}
+
+/* ── Info note ────────────────────────────────────────────── */
+.info-note {
+    background-color: rgba(48,109,41,0.08);
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: #3a6a3a;
+    line-height: 1.6;
+    margin-top: 4px;
+}
+
+/* ── Tombol kembali outlined ──────────────────────────────── */
+.btn-kembali .stButton > button {
+    background-color: transparent !important;
+    color: #0D530E !important;
+    border: 2px solid #0D530E !important;
+    border-radius: 14px !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    padding: 14px 24px !important;
+}
+.btn-kembali .stButton > button:hover {
+    background-color: #0D530E !important;
+    color: #FBF5DD !important;
+    transform: none !important;
+}
+
+/* ── Upload / Kamera area ─────────────────────────────────── */
+.scan-area {
+    background-color: #E8E4C4;
+    border-radius: 16px;
+    padding: 60px 24px;
+    text-align: center;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+.scan-area-icon {
+    background-color: rgba(48,109,41,0.15);
+    border-radius: 16px;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 4px;
+}
+.scan-area-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0D530E;
+}
+.scan-area-sub {
+    font-size: 13px;
+    color: #4a6a4a;
+}
+
+/* ── Tombol scan toggle ───────────────────────────────────── */
+.scan-toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+/* ── Confidence / Detection item ──────────────────────────── */
+.det-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    border: 1px solid #ddd8b8;
+}
+.det-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+.det-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0D530E;
+}
+.det-conf {
+    font-size: 12px;
+    color: #4a6a4a;
+}
+.conf-bar-bg {
+    height: 6px;
+    background-color: #E8E4C4;
+    border-radius: 99px;
+}
+.conf-bar-fill {
+    height: 6px;
+    background-color: #306D29;
+    border-radius: 99px;
+}
+
+/* ── Number input ─────────────────────────────────────────── */
+.stNumberInput input {
+    border-radius: 10px !important;
+    border: 1.5px solid #ddd8b8 !important;
+    background-color: #ffffff !important;
+    font-family: 'Poppins', sans-serif !important;
+    color: #0D530E !important;
+    font-size: 14px !important;
+}
+.stNumberInput input:focus {
+    border-color: #306D29 !important;
+    box-shadow: 0 0 0 2px rgba(48,109,41,0.12) !important;
+}
+
+/* ── Slider ───────────────────────────────────────────────── */
+[data-baseweb="slider"] [role="slider"] {
+    background-color: #306D29 !important;
+    border-color: #306D29 !important;
+}
+
+/* ── Alert ────────────────────────────────────────────────── */
+[data-testid="stAlert"] {
+    border-radius: 12px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 13px !important;
+}
+
+/* ── HR ───────────────────────────────────────────────────── */
+hr {
+    border: none !important;
+    border-top: 1px solid #ddd8b8 !important;
+    margin: 16px 0 !important;
+}
+
+/* ── Spinner ──────────────────────────────────────────────── */
+[data-testid="stSpinner"] { color: #306D29 !important; }
+
+/* ── Scrollbar ────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: #F5F0DC; }
+::-webkit-scrollbar-thumb { background: #c8c2a0; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #306D29; }
+
+/* ── Lanjut ke hasil (full width, semi-transparan) ────────── */
+.btn-lanjut .stButton > button {
+    background-color: rgba(48,109,41,0.35) !important;
+    color: #0D530E !important;
+    border: none !important;
+    border-radius: 14px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    padding: 16px 24px !important;
+}
+.btn-lanjut .stButton > button:hover {
+    background-color: #306D29 !important;
+    color: #FBF5DD !important;
+}
+
+/* Nav item sebagai anchor tag */
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 14px;
+    border-radius: 10px;
+    color: rgba(251,245,221,0.75) !important;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0 10px 2px;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none !important;
+}
+.nav-item:hover {
+    background-color: rgba(48,109,41,0.55);
+    color: #FBF5DD !important;
+}
+.nav-item svg {
+    flex-shrink: 0;
+    stroke: currentColor;
+}
+.nav-active {
+    background-color: #306D29 !important;
+    color: #FBF5DD !important;
+    font-weight: 600 !important;
+}
+/* Sembunyikan navigasi bawaan Streamlit */
+[data-testid="stSidebarNav"] {
+    display: none !important;
+}
+
+/* Sembunyikan tombol collapse bawaan Streamlit */
+[data-testid="stSidebarCollapseButton"] {
+    display: none !important;
+}
+
+/* Sembunyikan keyboard_double tooltip */
+[data-testid="stSidebarCollapsedControl"] {
+    display: none !important;
+}
+
+/* ── Bottom Navigation Bar ───────────────────────────────── */
+.bottom-nav {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .bottom-nav {
+        display: flex !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 99999;
+        background-color: #0D530E;
+        justify-content: space-around;
+        align-items: center;
+        padding: 8px 0 16px;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    }
+
+    .bottom-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        text-decoration: none !important;
+        color: rgba(251,245,221,0.6) !important;
+        font-family: 'Poppins', sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        padding: 4px 16px;
+        border-radius: 8px;
+        transition: all 0.2s;
+    }
+
+    .bottom-nav-item.active {
+        color: #FBF5DD !important;
+        background-color: rgba(48,109,41,0.5);
+    }
+
+    .bottom-nav-item span:first-child {
+        font-size: 22px;
+        line-height: 1;
+    }
+
+    /* Sembunyikan sidebar di mobile */
+    [data-testid="stSidebar"] {
+        display: none !important;
+    }
+
+    /* Padding bawah agar konten tidak tertutup bottom nav */
+    [data-testid="stMain"] > div {
+        padding-bottom: 80px !important;
+    }
+}
+
+/* Hapus underline nav item — lebih spesifik */
+[data-testid="stSidebar"] a.nav-item,
+[data-testid="stSidebar"] a.nav-item:hover,
+[data-testid="stSidebar"] a.nav-item:visited,
+[data-testid="stSidebar"] a.nav-item:active,
+[data-testid="stSidebar"] a.nav-item:focus {
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
+}
+
+[data-testid="stSidebar"] a.nav-item span {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+.btn-toggle-active .stButton > button {
+    background-color: #1a5c1a !important;
+    color: #FBF5DD !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+}
+.btn-toggle-inactive .stButton > button {
+    background-color: #F5F0DC !important;
+    color: #306D29 !important;
+    border: 2px solid #306D29 !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+}
+.btn-toggle-inactive .stButton > button:hover {
+    background-color: #306D29 !important;
+    color: #FBF5DD !important;
+}
+
+/* ============================================================
+   Scan Page — Camera & File Uploader
+   ============================================================ */
+/* Sembunyikan label bawaan widget */
+[data-testid="stCameraInput"] > label  { display: none !important; }
+[data-testid="stFileUploader"] > label { display: none !important; }
+
+/* Camera input wrapper */
+[data-testid="stCameraInput"] {
+    background-color: #E8E4C4 !important;
+    border-radius: 16px !important;
+    padding: 16px !important;
+}
+[data-testid="stCameraInput"] video {
+    border-radius: 12px !important;
+}
+
+/* Tombol ambil foto */
+[data-testid="stCameraInputButton"] {
+    background-color: #1a5c1a !important;
+    color: #FBF5DD !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-family: Poppins, sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* File uploader drag & drop area */
+[data-testid="stFileUploader"] section {
+    background-color: #E8E4C4 !important;
+    border: 2px dashed #306D29 !important;
+    border-radius: 16px !important;
+    padding: 40px 24px !important;
+    min-height: 280px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+[data-testid="stFileUploaderDropzone"] {
+    background: transparent !important;
+    border: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+}
+[data-testid="stFileUploaderDropzoneInstructions"] {
+    text-align: center !important;
+}
+[data-testid="stFileUploaderDropzoneInstructions"] div span {
+    font-family: Poppins, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #1a5c1a !important;
+}
+[data-testid="stFileUploaderDropzoneInstructions"] div small {
+    font-family: Poppins, sans-serif !important;
+    font-size: 13px !important;
+    color: #6b7c5c !important;
+}
+
+/* Tombol browse file */
+[data-testid="stFileUploader"] button {
+    background-color: #1a5c1a !important;
+    color: #FBF5DD !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-family: Poppins, sans-serif !important;
+    font-weight: 600 !important;
+    margin-top: 8px !important;
+}
+
+/* ============================================================
+   Scan Page — Number Input Stepper
+   ============================================================ */
+
+/* ── Number Input ── */
+[data-testid="stNumberInput"] > div {
+    background-color: #E8E4C4 !important;
+    border: 1.5px solid #c8c2a0 !important;
+    border-radius: 10px !important;
+}
+[data-testid="stNumberInput"] > div:focus-within {
+    border-color: #306D29 !important;
+    box-shadow: 0 0 0 2px rgba(48,109,41,0.15) !important;
+}
+[data-testid="stNumberInput"] input {
+    background-color: #E8E4C4 !important;
+    color: #0D530E !important;
+    -webkit-text-fill-color: #0D530E !important;
+    font-family: Poppins, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+}
+[data-baseweb="base-input"] {
+    background-color: #E8E4C4 !important;
+}
+/* Warna tombol + dan - bawaan Streamlit */
+[data-testid="stNumberInputStepDown"],
+[data-testid="stNumberInputStepUp"] {
+    background-color: #306D29 !important;
+    color: #FBF5DD !important;
+    border-left: 1px solid #c8c2a0 !important;
+}
+[data-testid="stNumberInputStepDown"]:hover,
+[data-testid="stNumberInputStepUp"]:hover {
+    background-color: #0D530E !important;
+}
+[data-testid="stNumberInputStepDown"] svg,
+[data-testid="stNumberInputStepUp"] svg {
+    fill: #FBF5DD !important;
+    stroke: #FBF5DD !important;
+}
