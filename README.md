@@ -1,8 +1,8 @@
+# SSDLite-FoodDetection-CalorieEstimation
 SSDLite-FoodDetection-CalorieEstimation
 Food ingredient detection (SSDLite MobileNetV3) with automatic calorie &amp; nutrition estimation via Streamlit — undergraduate thesis project.
-# NutriScan — Deteksi Bahan Makanan dan Estimasi Kalori Berbasis SSDLite MobileNetV3
 
-> Sistem deteksi objek untuk mengidentifikasi 10 jenis bahan makanan mentah dari citra menggunakan arsitektur **SSDLite MobileNetV3-Large**, diintegrasikan dengan **Tabel Komposisi Pangan Indonesia (TKPI)** untuk menghasilkan estimasi kalori dan kandungan nutrisi secara otomatis melalui aplikasi web **Streamlit**.
+> Deteksi Bahan Makanan dan Estimasi Kalori Berbasis SSDLite MobileNetV3 — Sistem deteksi objek untuk mengidentifikasi 10 jenis bahan makanan mentah dari citra menggunakan arsitektur **SSDLite MobileNetV3-Large**, diintegrasikan dengan **Tabel Komposisi Pangan Indonesia (TKPI)** untuk menghasilkan estimasi kalori dan kandungan nutrisi secara otomatis melalui aplikasi web **Streamlit**.
 
 ## Deskripsi Proyek
 
